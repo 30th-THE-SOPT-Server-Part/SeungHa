@@ -4,7 +4,7 @@ interface serverPart{
     age: number;
     group: string; 
     mbti: string[];
-    bloodType?: string; // 선택적 프로퍼티. 들어와도 되고 안들어와도 됨
+    bloodType?: string; // 선택적 프로퍼티.
 }
 
 const server: serverPart = {

@@ -38,5 +38,5 @@ const colset : Array<Closet> = [
 
     }
 
-    
+
 ]

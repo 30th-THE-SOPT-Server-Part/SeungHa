@@ -7,7 +7,7 @@ let grade: number = 3;
 
 
 const ages1: number[] = [1, 2, 3, 4]; // 숫자로 된 배열
-let ages2: Array<number> = [1, 2, 3, 4]; // 숫자로 된 배열(제네릭)
+let ages2: Array<number> = [1, 2, 3, 4]; 
 
 // Object - 자바스크립트의 모든 생성자를 extend. 모든 타입을 받을 수 있음
 // object - 자바스크립트의 원시 타입 제외 모두 받을 수 있음

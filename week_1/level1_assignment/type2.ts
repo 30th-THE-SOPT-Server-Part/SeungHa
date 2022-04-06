@@ -1,5 +1,4 @@
-// ts 실행: ts-node 파일이름
-
+// ts 실행 방법: ts-node 파일이름
 let name: string = '임승하';
 console.log(name);
 

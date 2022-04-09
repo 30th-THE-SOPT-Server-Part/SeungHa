@@ -2,16 +2,8 @@
 // 1. Member, Dinner interface 만들고 타입 지정하기
 // 2. organize 내부 로직 채우기
 
-interface Member {
-    name: string;
-    group: string;
-}
-
-interface Dinner {
-    member: Array<Member>;
-    shuffle(array_for_shu: Array<Member>): Array<Member>;
-    organize(array_for_org: Array<Member>): void;
-}
+import { Dinner } from "./Dinner"
+import { Member } from "./Member"
 
 const dinner: Dinner = {
     member: [
@@ -44,13 +36,10 @@ const dinner: Dinner = {
 
     organize(array) {
         this.shuffle(array);
-        let dinnerMember: Array<string> = [];
-        let temp: Member = array.find((element) => (element.group === 'ob'))!; // 느낌표 없으면 ts2322 오류 발생 
-        dinnerMember[0] = temp.name;
-        temp = array.find((element) => (element.group === 'yb'))!;
-        dinnerMember[1] = temp.name;
+        let ob: Member = array.find((e) => (e.group === 'ob')) as Member; 
+        let yb: Member = array.find((e) => (e.group === 'yb')) as Member;
 
-        console.log(`오늘의 저녁 식사 멤버는 ${dinnerMember[0]}, ${dinnerMember[1]}`);
+        console.log(`오늘의 저녁 식사 멤버는 ${ob.name}, ${yb.name}`);
     }
 };
 

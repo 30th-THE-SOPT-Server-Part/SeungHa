@@ -2,12 +2,14 @@ import express, { Router } from 'express';
 
 const router : Router = express.Router();
 
-router.use('/user', require('./user'));
+const userRouter = require('./routers/user');
+const blogRouter = require('./routers/blog');
+const signupRouter = require('./routers/signup');
+const likeRouter = require('./routers/like');
 
-router.use('/blog', require('./blog'));
-
-router.use('/signup', require('./signup'));
-
-router.use('/like', require('./like'));
+router.use('/user', userRouter);
+router.use('/blog', blogRouter);
+router.use('/signup', signupRouter);
+router.use('/like', likeRouter);
 
 module.exports = router;

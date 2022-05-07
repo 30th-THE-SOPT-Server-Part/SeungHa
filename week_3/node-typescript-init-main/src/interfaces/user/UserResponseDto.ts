@@ -1,4 +1,4 @@
-import { UserCreateDto } from "./userCreateDto";
+import { UserCreateDto } from "./UserCreateDto";
 
 export interface UserResponseDto extends UserCreateDto {
 }

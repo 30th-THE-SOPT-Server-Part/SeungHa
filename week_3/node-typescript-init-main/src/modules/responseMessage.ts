@@ -17,6 +17,20 @@ const message = {
     READ_POST_FAIL: '게시글 조회 실패',
     UPDATE_POST_SUCCESS: '게시글 수정 성공',
     DELETE_POST_SUCCESS: '게시글 삭제 성공',
+
+    //REVIEW
+    CREATE_REVIEW_SUCCESS: '리뷰 생성 성공',
+    READ_REVIEW_SUCCESS: '리뷰 조회 성공',
+    READ_REVIEW_FAIL: '리뷰 조회 실패',
+    UPDATE_REVIEW_SUCCESS: '리뷰 수정 성공',
+    DELETE_REVIEW_SUCCESS: '리뷰 삭제 성공',
+
+    //MOVIE
+    CREATE_MOVIE_SUCCESS: '리뷰 생성 성공',
+    READ_MOVIE_SUCCESS: '리뷰 조회 성공',
+    READ_MOVIE_FAIL: '리뷰 조회 실패',
+    UPDATE_MOVIE_SUCCESS: '리뷰 수정 성공',
+    DELETE_MOVIE_SUCCESS: '리뷰 삭제 성공',
     
 }
 

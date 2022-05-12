@@ -48,7 +48,7 @@ const updatePost = async ( postId: string, postUpdateDto: PostUpdateDto ) => {
 const findByPostId = async ( postId: string ) => {
 
     try {
-        const data: PostResponseDto | null = await Post.findByIdAndUpdate(postId);
+        const data: PostResponseDto | null = await Post.findById(postId);
         return data;
 
     } catch (error) {

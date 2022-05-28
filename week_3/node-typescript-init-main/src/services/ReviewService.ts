@@ -43,7 +43,7 @@ const getReviews = async (movieId: string): Promise<ReviewResponseDto[]> => {
             return result;
         }));
 
-        return data;
+        return data; 
         
     } catch (error){
         console.log(error);

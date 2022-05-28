@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { MovieInfo } from "../interfaces/movie/MovieInfo";
+import { ReviewInfo } from "../interfaces/review/ReviewInfo";
 
 const ReviewSchema = new mongoose.Schema({
     writer: {
@@ -23,4 +23,4 @@ const ReviewSchema = new mongoose.Schema({
     },
 })
 
-export default mongoose.model<MovieInfo & mongoose.Document>("Review", ReviewSchema);
+export default mongoose.model<ReviewInfo & mongoose.Document>("Review", ReviewSchema);

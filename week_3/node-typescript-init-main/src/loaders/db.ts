@@ -11,9 +11,8 @@ const connectDB = async () => {
 
         console.log("Mongoose Connected ...");
 
-        Movie.createCollection().then(function (collection) {
-            console.log("Movie Collection is created!");
-        });
+        
+        
       
         Review.createCollection().then(function (collection) {
             console.log("Review Collection is created!");

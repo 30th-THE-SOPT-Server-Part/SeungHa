@@ -15,12 +15,27 @@ const MovieSchema = new mongoose.Schema({
     },
     thumbnail: {
         type: String,
-        required: true
     },
     story: {
         type: String,
-        required: true
-    }
+    },
+    comments: [{
+        writer: {
+            type: mongoose.Types.ObjectId,
+            required: true,
+            ref: "User"
+        },
+        comment: {
+            type: String,
+            required: true
+        }
+    },
+    {
+        timestamps: true
+    }]
+},
+{
+    timestamps: true
 });
 
 

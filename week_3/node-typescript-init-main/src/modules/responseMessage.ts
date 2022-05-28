@@ -31,6 +31,21 @@ const message = {
     READ_MOVIE_FAIL: '리뷰 조회 실패',
     UPDATE_MOVIE_SUCCESS: '리뷰 수정 성공',
     DELETE_MOVIE_SUCCESS: '리뷰 삭제 성공',
+
+    //COMMENT
+    CREATE_COMMENT_SUCCESS: '리뷰 생성 성공',
+    READ_COMMENT_SUCCESS: '리뷰 조회 성공',
+    READ_COMMENT_FAIL: '리뷰 조회 실패',
+    UPDATE_COMMENT_SUCCESS: '리뷰 수정 성공',
+    DELETE_COMMENT_SUCCESS: '리뷰 삭제 성공',
+
+
+    UNAUTHORIZED: '권한이 없습니다',
+    INVAILD_TOKEN: '만료된 토큰입니다',
+    DUPLICATED: '이메일 중복',
+    INVAILED_PASSWORD: '잘못된 비밀번호',
+
+    SIGNIN_USER_SUCCESS: '로그인 성공',
     
 }
 

@@ -5,5 +5,6 @@ export interface UserInfo {
     phone: string;
     email: string;
     age: number;
+    password: string;
     school: SchoolInfo;
 }

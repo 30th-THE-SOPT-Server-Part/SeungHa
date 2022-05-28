@@ -10,6 +10,8 @@ if (envFound.error) {
   throw new Error("⚠️  Couldn't find .env file  ⚠️");
 }
 
+
+// config 파일 안에서 export
 export default {
   /**
    * Your favorite port
@@ -19,5 +21,21 @@ export default {
   /**
    * MongoDB URI
    */
+
   mongoURI: process.env.MONGODB_URI as string,
+
+    
+  /**
+   * jwt secrete
+   */
+  
+  jwtSecrete: process.env.JWT_SECRETE as string,
+
+    
+  /**
+   * jwt algo
+   */
+  
+  jwtAlgo: process.env.JWT_ALGO as string
+
 };

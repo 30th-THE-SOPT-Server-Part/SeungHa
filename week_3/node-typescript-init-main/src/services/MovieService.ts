@@ -5,6 +5,8 @@ import { MovieCommentCreateDto } from "../interfaces/movie/MovieCommentCreateDto
 import { MovieCommentInfo, MovieInfo} from "../interfaces/movie/MovieInfo"; 
 import Movie from "../models/Movie";
 import { MovieCommentUpdateDto } from "../interfaces/movie/MovieCommentUpdateDto";
+import { MovieOptionType } from "../interfaces/movie/MovieOptionType";
+import { MoviesResponseDto } from "../interfaces/movie/MoviesResponseDto";
 
 const createMovie = async (movieCreateDto: MovieCreateDto) => {
 
@@ -138,6 +140,56 @@ const deleteMovie = async (movieId: string) => {
 
 }
 
+const getMoviesBySearch = async (search: string, option: MovieOptionType, page: number ) => {
+    const regex = (pattern: string) => new RegExp(`.*${pattern}*.`);
+
+    let movies: MovieInfo[] = [];
+    const perPage: number = 2;
+
+    try{
+        const titleRegex: RegExp = regex(search);
+        
+        if (option === 'title') {
+            const movies = await Movie.find({ title: { $regex: titleRegex }})
+                                    .sort({ createdAt: -1 })
+                                    .skip(perPage * (page - 1))
+                                    .limit(perPage);
+        } else if (option === 'director') {
+            movies = await Movie.find({ director: {$regex: titleRegex} })
+                                    .sort({ createdAt: -1 })
+                                    .skip(perPage * (page - 1))
+                                    .limit(perPage);
+        } else {
+            movies = await Movie.find({
+                $or: [
+                    { director: {$regex: titleRegex } },
+                    { title: { $regex: titleRegex } }
+                ]
+            })
+            .sort({ createdAt: -1 })
+            .skip(perPage * (page - 1))
+            .limit(perPage);
+        }
+
+        // perPage: 페이지당 개수
+        // sort: createAt을 기준으로 -1(최신순) 정렬
+        // skip: 앞에서부터 얼마나 건너뛸지
+        // limit: 개수 제한 
+
+        const total: number = await Movie.countDocuments({});
+        const lastPage: number = Math.ceil(total / perPage);
+
+        return {
+            movies,
+            lastPage
+        };
+
+    } catch(error) {
+        console.log(error)
+        throw error
+    }
+}
+
 
 export default {
     createMovie,
@@ -146,4 +198,5 @@ export default {
     updateMovie,
     updateMovieComment,
     deleteMovie,
+    getMoviesBySearch,
 }

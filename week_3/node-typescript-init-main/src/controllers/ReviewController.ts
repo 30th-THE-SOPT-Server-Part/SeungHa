@@ -7,6 +7,7 @@ import statusCode from '../modules/statusCode';
 import util from "../modules/util";
 import { ReviewService } from '../services';
 const { validationResult } = require('express-validator');
+import { ReviewOptionType } from "../interfaces/review/ReviewOptionType";
 
 const createReview = async (req: Request, res: Response) => {
 
@@ -32,12 +33,24 @@ const createReview = async (req: Request, res: Response) => {
     }
 }
 
+// 특정 영화의 리뷰 검색 
 const getReviews = async (req: Request, res: Response) => {
    
     const { movieId } = req.params; 
+    const { search, option } = req.query;
+    
+    const isOptionType = (option: string): option is ReviewOptionType => {
+        return ["title", "content", "title_content"].indexOf(option) !== -1;
+    }
+
+    if (!isOptionType(option as string)) {
+        return res.status(statusCode.BAD_REQUEST).send(util.fail(statusCode.BAD_REQUEST, message.NULL_VALUE))
+    }
+
+    const page: number  = Number(req.query.page || 1);
 
     try{
-        const data: ReviewResponseDto[] = await ReviewService.getReviews(movieId);
+        const data = ReviewService.getReviews(movieId, search as string, option as ReviewOptionType, page)
         res.status(statusCode.OK).send(util.success(statusCode.OK, message.READ_REVIEW_SUCCESS, data));
 
     } catch(error){
@@ -47,6 +60,7 @@ const getReviews = async (req: Request, res: Response) => {
     }
     
 }
+
 
 export default {
     createReview,

@@ -31,6 +31,7 @@ const message = {
     READ_MOVIE_FAIL: '리뷰 조회 실패',
     UPDATE_MOVIE_SUCCESS: '리뷰 수정 성공',
     DELETE_MOVIE_SUCCESS: '리뷰 삭제 성공',
+    SEARCH_MOVIE_SUCCESS: '리뷰 생성 성공',
 
     //COMMENT
     CREATE_COMMENT_SUCCESS: '리뷰 생성 성공',
@@ -39,6 +40,9 @@ const message = {
     UPDATE_COMMENT_SUCCESS: '리뷰 수정 성공',
     DELETE_COMMENT_SUCCESS: '리뷰 삭제 성공',
 
+    //FILE
+    CREATE_FILE_SUCCESS: '파일 생성 성공',
+    
 
     UNAUTHORIZED: '권한이 없습니다',
     INVAILD_TOKEN: '만료된 토큰입니다',

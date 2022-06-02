@@ -17,7 +17,7 @@ export default (req: Request, res: Response, next: NextFunction) => {
 
     try{
 
-        const decoded = jwt.verify(token, config.jwtSecrete); 
+        const decoded = jwt.verify(token, config.jwtSecret); 
 
         req.body.user = (decoded as any).user; // 타입단언 안해주면 오류
 

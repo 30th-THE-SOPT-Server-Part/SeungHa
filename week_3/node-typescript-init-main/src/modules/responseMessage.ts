@@ -26,19 +26,19 @@ const message = {
     DELETE_REVIEW_SUCCESS: '리뷰 삭제 성공',
 
     //MOVIE
-    CREATE_MOVIE_SUCCESS: '리뷰 생성 성공',
-    READ_MOVIE_SUCCESS: '리뷰 조회 성공',
-    READ_MOVIE_FAIL: '리뷰 조회 실패',
-    UPDATE_MOVIE_SUCCESS: '리뷰 수정 성공',
-    DELETE_MOVIE_SUCCESS: '리뷰 삭제 성공',
-    SEARCH_MOVIE_SUCCESS: '리뷰 생성 성공',
+    CREATE_MOVIE_SUCCESS: '영화 생성 성공',
+    READ_MOVIE_SUCCESS: '영화 조회 성공',
+    READ_MOVIE_FAIL: '영화 조회 실패',
+    UPDATE_MOVIE_SUCCESS: '영화 수정 성공',
+    DELETE_MOVIE_SUCCESS: '영화 삭제 성공',
+    SEARCH_MOVIE_SUCCESS: '영화 생성 성공',
 
     //COMMENT
-    CREATE_COMMENT_SUCCESS: '리뷰 생성 성공',
-    READ_COMMENT_SUCCESS: '리뷰 조회 성공',
-    READ_COMMENT_FAIL: '리뷰 조회 실패',
-    UPDATE_COMMENT_SUCCESS: '리뷰 수정 성공',
-    DELETE_COMMENT_SUCCESS: '리뷰 삭제 성공',
+    CREATE_COMMENT_SUCCESS: '댓글 생성 성공',
+    READ_COMMENT_SUCCESS: '댓글 조회 성공',
+    READ_COMMENT_FAIL: '댓글 조회 실패',
+    UPDATE_COMMENT_SUCCESS: '댓글 수정 성공',
+    DELETE_COMMENT_SUCCESS: '댓글 삭제 성공',
 
     //FILE
     CREATE_FILE_SUCCESS: '파일 생성 성공',

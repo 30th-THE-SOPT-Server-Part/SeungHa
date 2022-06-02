@@ -14,7 +14,7 @@ const getToken = (userId: mongoose.Schema.Types.ObjectId) : string => {
     // 암호화
     const accessToken: string = jwt.sign(
         payload, // payload 넣어줌
-        config.jwtSecrete, // config에서 가져옴
+        config.jwtSecret, // config에서 가져옴
         { expiresIn: '2h' }, // 유효기간 지정
     );
 

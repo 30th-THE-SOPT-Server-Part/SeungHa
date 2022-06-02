@@ -29,7 +29,7 @@ export default {
    * jwt secrete
    */
   
-  jwtSecrete: process.env.JWT_SECRETE as string,
+  jwtSecret: process.env.JWT_SECRET as string,
 
     
   /**

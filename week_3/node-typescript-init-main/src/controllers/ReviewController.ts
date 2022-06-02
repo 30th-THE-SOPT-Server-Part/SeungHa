@@ -50,7 +50,8 @@ const getReviews = async (req: Request, res: Response) => {
     const page: number  = Number(req.query.page || 1);
 
     try{
-        const data = ReviewService.getReviews(movieId, search as string, option as ReviewOptionType, page)
+        const data = await ReviewService.getReviews(movieId, search as string, option as ReviewOptionType, page)
+        console.log("Controller = ", data)
         res.status(statusCode.OK).send(util.success(statusCode.OK, message.READ_REVIEW_SUCCESS, data));
 
     } catch(error){

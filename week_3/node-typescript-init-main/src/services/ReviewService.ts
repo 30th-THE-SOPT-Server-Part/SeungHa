@@ -29,9 +29,9 @@ const createReview = async (movieId: string, reviewCreateDto: ReviewCreateDto ) 
 }
 
 
-const getReviews = async (movieId: string, search: string, option: ReviewOptionType, page: number) => {
+const getReviews = async (movieId: string, search: string, option: ReviewOptionType, page: number): Promise<ReviewResponseDto> => {
 
-    const regex = (pattern: string) => new RegExp(`.*${pattern}*.`);
+    const regex = (pattern: string) => new RegExp(`.*${pattern}.*`);
 
     let reviews: ReviewInfo[] = [];
     let perPage: number = 2;
@@ -60,7 +60,7 @@ const getReviews = async (movieId: string, search: string, option: ReviewOptionT
             reviews = await Review.find({
                 $or: [
                     { title: { $regex: pattern } },
-                    { content: { $reqex: pattern } }
+                    { content: { $regex: pattern } }
                 ]
             })
             .where('movie').equals(movieId)
@@ -71,14 +71,19 @@ const getReviews = async (movieId: string, search: string, option: ReviewOptionT
         }
 
         // 특정 영화에 대한 조회이기 때문에 필터에 movie: movieId 를 넣어줘야됨
-        const total: number = await Review.countDocuments({ movie: movieId });
+        const total = await Review.countDocuments({});
         const lastPage: number = Math.ceil(total / perPage);
-    
-        return {
+
+        const data = {
             reviews,
             lastPage
-        };
+        }
+        
+        console.log("service = ", data)
 
+        return data;
+        
+        
         // const reviews = await Review.find({
         //     movie: movieId
         // }).populate('writer', 'name').populate('movie'); // writer 객체의 name만, movie 객체 전부 가져옴

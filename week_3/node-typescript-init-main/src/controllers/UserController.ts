@@ -71,7 +71,7 @@ const signInUser =async (req: Request, res: Response) => {
             accessToken
         }
 
-        res.status(statusCode.OK).send(util.success(statusCode.OK, message.SIGNIN_USER_SUCCESS));
+        res.status(statusCode.OK).send(util.success(statusCode.OK, message.SIGNIN_USER_SUCCESS, data));
 
     } catch(error){
 

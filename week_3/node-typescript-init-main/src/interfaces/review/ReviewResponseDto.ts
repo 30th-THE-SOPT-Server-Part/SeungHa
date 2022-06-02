@@ -1,8 +1,6 @@
-import { MovieInfo } from "../movie/MovieInfo";
+import { ReviewInfo } from "../review/ReviewInfo";
 
 export interface ReviewResponseDto {
-    writer: string;
-    movie: MovieInfo;
-    title: string;
-    content: string;
+    reviews: ReviewInfo[];
+    lastPage: number;
 }
